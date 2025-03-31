@@ -1,0 +1,97 @@
+/**index.wxss**/
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40rpx;
+}
+
+.loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.loading-icon {
+  width: 80rpx;
+  height: 80rpx;
+  border: 8rpx solid #FFD700;
+  border-radius: 50%;
+  border-top-color: transparent;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.loading-text {
+  margin-top: 30rpx;
+  font-size: 32rpx;
+  color: #F1FAEE;
+}
+
+.content {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: 90vh;
+}
+
+.logo-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60rpx;
+}
+
+.logo {
+  width: 300rpx;
+  height: 300rpx;
+}
+
+.title {
+  font-size: 60rpx;
+  font-weight: bold;
+  color: #FFD700;
+  margin-top: 30rpx;
+  text-shadow: 2rpx 2rpx 8rpx rgba(0, 0, 0, 0.5);
+}
+
+.user-info-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  margin: 60rpx 0;
+}
+
+.userinfo-avatar {
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  border: 4rpx solid #FFD700;
+  margin-bottom: 20rpx;
+}
+
+.userinfo-nickname {
+  font-size: 36rpx;
+  color: #F1FAEE;
+  margin-bottom: 40rpx;
+}
+
+.btn-primary, .btn-secondary {
+  width: 80%;
+  margin: 20rpx 0;
+}
+
+.version {
+  font-size: 24rpx;
+  color: #A8DADC;
+  margin-bottom: 20rpx;
+}
