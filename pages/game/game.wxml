@@ -1,0 +1,93 @@
+<!--game.wxml-->
+<view class="container">
+  <view class="game-table">
+    <!-- 顶部信息 -->
+    <view class="game-header">
+      <view class="room-info">
+        <text class="room-type">{{roomType}}</text>
+        <text class="room-id" wx:if="{{isPrivate}}">房间号: 12345</text>
+      </view>
+      <view class="timer-container">
+        <text class="timer-text">{{timer}}s</text>
+      </view>
+    </view>
+    
+    <!-- 左侧玩家 -->
+    <view class="player left-player">
+      <view class="player-avatar-container {{currentPlayer === 'left' ? 'active-player' : ''}}">
+        <image class="player-avatar" src="/images/player-left.png"></image>
+        <text class="player-name">东方不败</text>
+        <view class="landlord-icon" wx:if="{{!isLandlord && currentPlayer === 'left'}}">地主</view>
+      </view>
+      <view class="cards-count">剩余: {{leftPlayerCards}}张</view>
+      <view class="played-cards-area">
+        <block wx:if="{{lastPlayedCards.left.length > 0}}">
+          <view class="played-card" wx:for="{{lastPlayedCards.left}}" wx:key="index">
+            {{item.display}}
+          </view>
+        </block>
+      </view>
+    </view>
+    
+    <!-- 右侧玩家 -->
+    <view class="player right-player">
+      <view class="player-avatar-container {{currentPlayer === 'right' ? 'active-player' : ''}}">
+        <image class="player-avatar" src="/images/player-right.png"></image>
+        <text class="player-name">独孤求败</text>
+        <view class="landlord-icon" wx:if="{{!isLandlord && currentPlayer === 'right'}}">地主</view>
+      </view>
+      <view class="cards-count">剩余: {{rightPlayerCards}}张</view>
+      <view class="played-cards-area">
+        <block wx:if="{{lastPlayedCards.right.length > 0}}">
+          <view class="played-card" wx:for="{{lastPlayedCards.right}}" wx:key="index">
+            {{item.display}}
+          </view>
+        </block>
+      </view>
+    </view>
+    
+    <!-- 底牌区域 -->
+    <view class="bottom-cards" wx:if="{{bottomCards.length > 0}}">
+      <view class="bottom-card" wx:for="{{bottomCards}}" wx:key="index">
+        ?
+      </view>
+    </view>
+    
+    <!-- 中央出牌区域 -->
+    <view class="center-area">
+      <view class="played-cards-area player-played" wx:if="{{lastPlayedCards.player.length > 0}}">
+        <view class="played-card" wx:for="{{lastPlayedCards.player}}" wx:key="index">
+          {{item.display}}
+        </view>
+      </view>
+    </view>
+    
+    <!-- 游戏消息 -->
+    <view class="game-messages">
+      <view class="message" wx:for="{{gameMessages}}" wx:key="index">
+        {{item}}
+      </view>
+    </view>
+    
+    <!-- 玩家手牌区域 -->
+    <view class="player-cards-container {{currentPlayer === 'player' ? 'active-player' : ''}}">
+      <view class="landlord-badge" wx:if="{{isLandlord}}">地主</view>
+      <view class="player-cards">
+        <view class="card {{item.selected ? 'selected' : ''}}" 
+              wx:for="{{playerCards}}" 
+              wx:key="index" 
+              bindtap="selectCard" 
+              data-index="{{index}}">
+          <text class="card-value">{{item.display}}</text>
+        </view>
+      </view>
+    </view>
+    
+    <!-- 操作按钮 -->
+    <view class="control-buttons" wx:if="{{currentPlayer === 'player'}}">
+      <button class="control-btn hint-btn" bindtap="hint">提示</button>
+      <button class="control-btn pass-btn" bindtap="pass">不出</button>
+      <button class="control-btn play-btn" bindtap="playCards">出牌</button>
+    </view>
+  </view>
+</view>
