@@ -1,0 +1,30 @@
+<!--index.wxml-->
+<view class="container">
+  <view class="loading" wx:if="{{loading}}">
+    <view class="loading-icon"></view>
+    <text class="loading-text">游戏加载中...</text>
+  </view>
+  
+  <view class="content" wx:else>
+    <view class="logo-container">
+      <image class="logo" src="/images/logo.png" mode="aspectFit"></image>
+      <text class="title">欢乐斗地主</text>
+    </view>
+    
+    <view class="user-info-container" wx:if="{{!hasUserInfo}}">
+      <button wx:if="{{canIUseGetUserProfile}}" class="btn-primary" bindtap="getUserProfile">微信登录</button>
+      <button wx:elif="{{canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo" class="btn-primary">微信登录</button>
+      <view wx:else>请使用1.4.4及以上版本基础库</view>
+      
+      <button class="btn-secondary" bindtap="quickStart">快速开始</button>
+    </view>
+    
+    <view class="user-info-container" wx:else>
+      <image class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
+      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
+      <button class="btn-primary" bindtap="navigateToRoom">开始游戏</button>
+    </view>
+    
+    <view class="version">v1.0.0</view>
+  </view>
+</view>
