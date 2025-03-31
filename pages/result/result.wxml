@@ -1,0 +1,37 @@
+<!--result.wxml-->
+<view class="container">
+  <view class="result-card">
+    <view class="result-header {{isWin ? 'win' : 'lose'}}">
+      <view class="result-title">{{isWin ? '游戏胜利' : '游戏失败'}}</view>
+      <view class="result-subtitle">{{isLandlord ? '地主' : '农民'}}{{isLandlordWin ? '胜利' : '失败'}}</view>
+    </view>
+    
+    <view class="result-content">
+      <view class="reward-container">
+        <view class="reward-label">获得金币</view>
+        <view class="reward-value {{reward >= 0 ? 'positive' : 'negative'}}">
+          {{reward >= 0 ? '+' : ''}}{{reward}}
+        </view>
+      </view>
+      
+      <view class="total-coins">
+        <image class="coin-icon" src="/images/coin.png"></image>
+        <text>当前金币: {{totalCoins}}</text>
+      </view>
+      
+      <view class="result-message">
+        {{isWin ? '恭喜你获得胜利！再接再厉！' : '别灰心，再来一局，一定能赢！'}}
+      </view>
+    </view>
+    
+    <view class="result-actions">
+      <button class="action-btn primary" bindtap="playAgain">再来一局</button>
+      <button class="action-btn secondary" bindtap="backToHome">返回主页</button>
+      <button class="action-btn share" bindtap="shareResult">分享战绩</button>
+    </view>
+  </view>
+  
+  <view class="confetti" wx:if="{{isWin && animationFinished}}">
+    <view class="confetti-piece" wx:for="{{20}}" wx:key="index"></view>
+  </view>
+</view>
