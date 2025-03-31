@@ -1,0 +1,41 @@
+<!--room.wxml-->
+<view class="container">
+  <view class="header">
+    <view class="user-info">
+      <image class="avatar" src="{{userInfo.avatarUrl || '/images/default-avatar.png'}}"></image>
+      <text class="nickname">{{userInfo.nickName || '游客'}}</text>
+    </view>
+    <view class="coins-container">
+      <image class="coin-icon" src="/images/coin.png"></image>
+      <text class="coins">{{coins}}</text>
+    </view>
+  </view>
+  
+  <view class="room-list">
+    <view class="section-title">选择游戏房间</view>
+    
+    <view class="room-card" wx:for="{{rooms}}" wx:key="id" bindtap="enterRoom" data-id="{{item.id}}" style="border-left: 10rpx solid {{item.color}}">
+      <view class="room-info">
+        <view class="room-name">{{item.name}}</view>
+        <view class="room-fee">入场费: <text class="gold-text">{{item.entryFee}}</text> 金币</view>
+        <view class="room-min">最低携带: {{item.minCoins}} 金币</view>
+      </view>
+      <view class="room-status">
+        <view class="online-players">
+          <text class="online-count">{{item.onlinePlayers}}</text>
+          <text class="online-label">在线</text>
+        </view>
+        <button class="enter-btn" hover-class="btn-hover">进入</button>
+      </view>
+    </view>
+  </view>
+  
+  <view class="private-room">
+    <button class="create-room-btn" bindtap="createPrivateRoom">
+      <text class="btn-icon">+</text>
+      <text>创建私人房间</text>
+    </button>
+  </view>
+  
+  <view class="back-btn" bindtap="navigateBack">返回</view>
+</view>
