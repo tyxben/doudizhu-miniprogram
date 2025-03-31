@@ -1,0 +1,171 @@
+/**room.wxss**/
+.container {
+  padding: 40rpx;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-bottom: 30rpx;
+  border-bottom: 2rpx solid rgba(255, 255, 255, 0.1);
+}
+
+.user-info {
+  display: flex;
+  align-items: center;
+}
+
+.avatar {
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  margin-right: 20rpx;
+  border: 2rpx solid #FFD700;
+}
+
+.nickname {
+  font-size: 32rpx;
+  color: #F1FAEE;
+}
+
+.coins-container {
+  display: flex;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  padding: 10rpx 20rpx;
+  border-radius: 30rpx;
+}
+
+.coin-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+
+.coins {
+  font-size: 32rpx;
+  color: #FFD700;
+  font-weight: bold;
+}
+
+.room-list {
+  margin-top: 40rpx;
+  width: 100%;
+  flex: 1;
+  overflow-y: auto;
+}
+
+.section-title {
+  font-size: 36rpx;
+  font-weight: bold;
+  margin-bottom: 30rpx;
+  color: #F1FAEE;
+}
+
+.room-card {
+  background-color: rgba(69, 123, 157, 0.5);
+  border-radius: 16rpx;
+  padding: 30rpx;
+  margin-bottom: 30rpx;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 6rpx 12rpx rgba(0, 0, 0, 0.15);
+}
+
+.room-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.room-name {
+  font-size: 36rpx;
+  font-weight: bold;
+  color: #F1FAEE;
+  margin-bottom: 10rpx;
+}
+
+.room-fee, .room-min {
+  font-size: 28rpx;
+  color: #A8DADC;
+  margin-bottom: 6rpx;
+}
+
+.gold-text {
+  color: #FFD700;
+}
+
+.room-status {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.online-players {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20rpx;
+}
+
+.online-count {
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #F1FAEE;
+}
+
+.online-label {
+  font-size: 24rpx;
+  color: #A8DADC;
+}
+
+.enter-btn {
+  background-color: #E63946;
+  color: #F1FAEE;
+  font-size: 28rpx;
+  padding: 10rpx 30rpx;
+  border-radius: 30rpx;
+  border: none;
+  font-weight: bold;
+  box-shadow: 0 4rpx 8rpx rgba(0, 0, 0, 0.2);
+}
+
+.btn-hover {
+  opacity: 0.8;
+  transform: scale(0.98);
+}
+
+.private-room {
+  width: 100%;
+  margin: 30rpx 0;
+}
+
+.create-room-btn {
+  background-color: transparent;
+  border: 2rpx dashed #FFD700;
+  color: #FFD700;
+  font-size: 32rpx;
+  padding: 20rpx;
+  border-radius: 16rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-icon {
+  font-size: 40rpx;
+  margin-right: 10rpx;
+}
+
+.back-btn {
+  text-align: center;
+  color: #A8DADC;
+  font-size: 28rpx;
+  margin-top: 20rpx;
+  padding: 10rpx;
+}
