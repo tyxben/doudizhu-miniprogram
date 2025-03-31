@@ -1,0 +1,200 @@
+/**result.wxss**/
+.container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 40rpx;
+  position: relative;
+  overflow: hidden;
+}
+
+.result-card {
+  width: 90%;
+  background-color: #457B9D;
+  border-radius: 20rpx;
+  overflow: hidden;
+  box-shadow: 0 10rpx 30rpx rgba(0, 0, 0, 0.3);
+  z-index: 10;
+}
+
+.result-header {
+  padding: 40rpx;
+  text-align: center;
+}
+
+.result-header.win {
+  background-color: #FFD700;
+}
+
+.result-header.lose {
+  background-color: #E63946;
+}
+
+.result-title {
+  font-size: 48rpx;
+  font-weight: bold;
+  color: #1D3557;
+  margin-bottom: 10rpx;
+}
+
+.result-subtitle {
+  font-size: 32rpx;
+  color: #1D3557;
+  opacity: 0.8;
+}
+
+.result-content {
+  padding: 40rpx;
+  background-color: #F1FAEE;
+}
+
+.reward-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 2rpx solid rgba(0, 0, 0, 0.1);
+  margin-bottom: 20rpx;
+}
+
+.reward-label {
+  font-size: 32rpx;
+  color: #1D3557;
+}
+
+.reward-value {
+  font-size: 48rpx;
+  font-weight: bold;
+}
+
+.reward-value.positive {
+  color: #2A9D8F;
+}
+
+.reward-value.negative {
+  color: #E63946;
+}
+
+.total-coins {
+  display: flex;
+  align-items: center;
+  margin: 20rpx 0;
+  font-size: 32rpx;
+  color: #1D3557;
+}
+
+.coin-icon {
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 10rpx;
+}
+
+.result-message {
+  font-size: 28rpx;
+  color: #1D3557;
+  text-align: center;
+  margin: 30rpx 0;
+  font-style: italic;
+}
+
+.result-actions {
+  display: flex;
+  flex-direction: column;
+  padding: 30rpx;
+}
+
+.action-btn {
+  margin: 10rpx 0;
+  border-radius: 40rpx;
+  font-size: 32rpx;
+  padding: 20rpx 0;
+}
+
+.action-btn.primary {
+  background-color: #E63946;
+  color: #F1FAEE;
+}
+
+.action-btn.secondary {
+  background-color: #A8DADC;
+  color: #1D3557;
+}
+
+.action-btn.share {
+  background-color: #2A9D8F;
+  color: #F1FAEE;
+}
+
+/* 胜利时的彩带效果 */
+.confetti {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.confetti-piece {
+  position: absolute;
+  width: 10rpx;
+  height: 30rpx;
+  background-color: #FFD700;
+  top: -100rpx;
+  opacity: 0;
+  animation: confetti-fall 5s ease-in-out infinite;
+}
+
+.confetti-piece:nth-child(2n) {
+  background-color: #E63946;
+}
+
+.confetti-piece:nth-child(3n) {
+  background-color: #2A9D8F;
+}
+
+.confetti-piece:nth-child(4n) {
+  background-color: #457B9D;
+}
+
+.confetti-piece:nth-child(5n) {
+  background-color: #A8DADC;
+}
+
+@keyframes confetti-fall {
+  0% {
+    opacity: 1;
+    top: -100rpx;
+    transform: translateX(0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    top: 100vh;
+    transform: translateX(100rpx) rotate(360deg);
+  }
+}
+
+/* 为每个彩带设置不同的起始位置和动画延迟 */
+.confetti-piece:nth-child(1) { left: 5%; animation-delay: 0s; }
+.confetti-piece:nth-child(2) { left: 10%; animation-delay: 0.2s; }
+.confetti-piece:nth-child(3) { left: 15%; animation-delay: 0.4s; }
+.confetti-piece:nth-child(4) { left: 20%; animation-delay: 0.6s; }
+.confetti-piece:nth-child(5) { left: 25%; animation-delay: 0.8s; }
+.confetti-piece:nth-child(6) { left: 30%; animation-delay: 1s; }
+.confetti-piece:nth-child(7) { left: 35%; animation-delay: 1.2s; }
+.confetti-piece:nth-child(8) { left: 40%; animation-delay: 1.4s; }
+.confetti-piece:nth-child(9) { left: 45%; animation-delay: 1.6s; }
+.confetti-piece:nth-child(10) { left: 50%; animation-delay: 1.8s; }
+.confetti-piece:nth-child(11) { left: 55%; animation-delay: 2s; }
+.confetti-piece:nth-child(12) { left: 60%; animation-delay: 2.2s; }
+.confetti-piece:nth-child(13) { left: 65%; animation-delay: 2.4s; }
+.confetti-piece:nth-child(14) { left: 70%; animation-delay: 2.6s; }
+.confetti-piece:nth-child(15) { left: 75%; animation-delay: 2.8s; }
+.confetti-piece:nth-child(16) { left: 80%; animation-delay: 3s; }
+.confetti-piece:nth-child(17) { left: 85%; animation-delay: 3.2s; }
+.confetti-piece:nth-child(18) { left: 90%; animation-delay: 3.4s; }
+.confetti-piece:nth-child(19) { left: 95%; animation-delay: 3.6s; }
+.confetti-piece:nth-child(20) { left: 100%; animation-delay: 3.8s; }
